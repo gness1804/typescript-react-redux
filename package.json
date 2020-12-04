@@ -10,6 +10,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "pre-commit": "^1.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -21,8 +22,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:types": "tsc --noEmit src/*.ts"
+    "lint:types": "tsc --noEmit src/*.ts",
+    "no-console": "bash ../../../githooks/dist/noConsole.sh"
   },
+  "pre-commit": [
+    "no-console",
+    "lint:types"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
