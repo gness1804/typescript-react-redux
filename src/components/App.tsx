@@ -9,11 +9,16 @@ interface Props {
 }
 
 class _App extends React.Component<Props> {
+  renderList(): ReactNode[] {
+    return this.props.todos.map(({ title, id }) => <div key={id}>{title}</div>);
+  }
+
   render(): ReactNode {
     const { fetchTodos } = this.props;
 
     return (
       <div>
+        <h1>Todos!</h1>
         <button onClick={fetchTodos}>Fetch Todos</button>
       </div>
     );
