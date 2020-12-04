@@ -1,10 +1,10 @@
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { Dispatch } from 'redux';
 import { Todo, Types } from '../types';
 
 export const fetchTodos = () => {
   return async (dispatch: Dispatch) => {
-    const res: AxiosResponse<Todo[]> = await axios.get(
+    const res = await axios.get<Todo[]>(
       'https://jsonplaceholder.typicode.com/todos',
     );
 
