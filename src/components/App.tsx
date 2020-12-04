@@ -10,7 +10,13 @@ interface Props {
 
 class _App extends React.Component<Props> {
   render(): ReactNode {
-    return <div>Hello</div>;
+    const { fetchTodos } = this.props;
+
+    return (
+      <div>
+        <button onClick={fetchTodos}>Fetch Todos</button>
+      </div>
+    );
   }
 }
 
