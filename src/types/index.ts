@@ -1,3 +1,10 @@
+export type AllTodoActions = DeleteTodoAction | FetchTodosAction;
+
+export interface DeleteTodoAction {
+  type: Types.deleteTodo;
+  payload: number; // the id of the todo to delete
+}
+
 export interface FetchTodosAction {
   type: Types.fetchTodos;
   payload: Todo[];
@@ -15,4 +22,5 @@ export interface Todo {
 
 export enum Types {
   fetchTodos,
+  deleteTodo,
 }
