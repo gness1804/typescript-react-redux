@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-import { Todo, Types } from '../types';
+import { Todo, Types, FetchTodosAction } from '../types';
 
 export const fetchTodos = () => {
   return async (dispatch: Dispatch) => {
@@ -8,7 +8,7 @@ export const fetchTodos = () => {
       'https://jsonplaceholder.typicode.com/todos',
     );
 
-    dispatch({
+    dispatch<FetchTodosAction>({
       type: Types.fetchTodos,
       payload: res.data,
     });
