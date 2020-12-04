@@ -6,8 +6,26 @@ interface Props {
 }
 
 class App extends React.Component<Props> {
+  state = {
+    counter: 0,
+  };
+
+  increaseCount = (): void => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
+
+  decreaseCount = (): void => {
+    this.setState({ counter: this.state.counter - 1 });
+  };
+
   render() {
-    return <div>Hello there, {this.props.name}</div>;
+    return (
+      <div>
+        <p>The count is: {this.state.counter}</p>
+        <button onClick={this.increaseCount}>Increase Count</button>
+        <button onClick={this.decreaseCount}>Decrease Count</button>
+      </div>
+    );
   }
 }
 
