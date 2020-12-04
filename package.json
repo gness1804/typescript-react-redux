@@ -30,7 +30,8 @@
   },
   "pre-commit": [
     "no-console",
-    "lint:types"
+    "lint:types",
+    "prettier:check"
   ],
   "eslintConfig": {
     "extends": [
