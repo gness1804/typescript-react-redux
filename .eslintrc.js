@@ -15,6 +15,10 @@ const activeConfig = {
     'no-console': 'warn',
     'no-undef': 'error'
   },
+  env: {
+    browser: true,
+    node: true,
+  },
 };
 
 const inactiveConfig = {
