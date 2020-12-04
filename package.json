@@ -11,6 +11,7 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "pre-commit": "^1.2.2",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -23,7 +24,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:types": "tsc --noEmit src/*.ts",
-    "no-console": "bash ../../../githooks/dist/noConsole.sh"
+    "no-console": "bash ../../../githooks/dist/noConsole.sh",
+    "prettier:check": "prettier --check src/*",
+    "prettier:write": "prettier --write src/*"
   },
   "pre-commit": [
     "no-console",
