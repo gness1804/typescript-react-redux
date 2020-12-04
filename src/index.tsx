@@ -1,40 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 
-interface Props {
-  name: string;
-}
+// interface Props {
+//   name: string;
+// }
 
-interface State {
-  counter: number;
-}
+// interface State {
+//   counter: number;
+// }
 
-class App extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
+// const App = (props: Props): JSX.Element => {
+// return <div>Hello, {props.name}</div>
+// }
 
-    this.state = {
-      counter: 0,
-    };
-  }
+// // class App extends React.Component<Props, State> {
+// //   constructor(props: Props) {
+// //     super(props);
 
-  increaseCount = (): void => {
-    this.setState({ counter: this.state.counter + 1 });
-  };
+// //     this.state = {
+// //       counter: 0,
+// //     };
+// //   }
 
-  decreaseCount = (): void => {
-    this.setState({ counter: this.state.counter - 1 });
-  };
+// //   increaseCount = (): void => {
+// //     this.setState({ counter: this.state.counter + 1 });
+// //   };
 
-  render() {
-    return (
-      <div>
-        <p>The count is: {this.state.counter}</p>
-        <button onClick={this.increaseCount}>Increase Count</button>
-        <button onClick={this.decreaseCount}>Decrease Count</button>
-      </div>
-    );
-  }
-}
+// //   decreaseCount = (): void => {
+// //     this.setState({ counter: this.state.counter - 1 });
+// //   };
 
-ReactDOM.render(<App name="Graham" />, document.querySelector('#root'));
+// //   render() {
+// //     return (
+// //       <div>
+// //         <p>The count is: {this.state.counter}</p>
+// //         <button onClick={this.increaseCount}>Increase Count</button>
+// //         <button onClick={this.decreaseCount}>Decrease Count</button>
+// //       </div>
+// //     );
+// //   }
+// // }
+
+// ReactDOM.render(<App name="Graham" />, document.querySelector('#root'));
