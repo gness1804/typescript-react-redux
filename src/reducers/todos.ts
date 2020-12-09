@@ -7,6 +7,8 @@ export const todosReducer = (
   switch (action.type) {
     case Types.fetchTodos:
       return action.payload;
+    case Types.deleteTodo:
+      return state.filter(({ id }) => id !== action.payload);
     default:
       return state;
   }

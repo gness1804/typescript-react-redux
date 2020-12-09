@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-import { Todo, Types, FetchTodosAction } from '../types';
+import { Todo, Types, FetchTodosAction, DeleteTodoAction } from '../types';
 
 export const fetchTodos = () => {
   return async (dispatch: Dispatch) => {
@@ -14,3 +14,8 @@ export const fetchTodos = () => {
     });
   };
 };
+
+export const deleteTodo = (id: number): DeleteTodoAction => ({
+  type: Types.deleteTodo,
+  payload: id,
+});
