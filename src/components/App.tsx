@@ -9,7 +9,26 @@ interface Props {
   deleteTodo(id: number): DeleteTodoAction;
 }
 
-class _App extends React.Component<Props> {
+interface State {
+  loading: boolean;
+}
+
+class _App extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      loading: false,
+    };
+  }
+
+  _fetchTodos = async () => {
+    const { fetchTodos } = this.props;
+    this.setState({ loading: true });
+    await fetchTodos();
+    this.setState({ loading: false });
+  };
+
   renderList(): ReactNode[] {
     const { deleteTodo } = this.props;
     return this.props.todos.map(({ title, id }) => (
@@ -20,12 +39,12 @@ class _App extends React.Component<Props> {
   }
 
   render(): ReactNode {
-    const { fetchTodos } = this.props;
-
+    const { loading } = this.state;
     return (
       <div>
         <h1>Todos!</h1>
-        <button onClick={fetchTodos}>Fetch Todos</button>
+        <button onClick={this._fetchTodos}>Fetch Todos</button>
+        {loading ? 'Loading...' : null}
         {this.renderList()}
       </div>
     );
